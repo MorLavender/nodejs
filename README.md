@@ -11,21 +11,6 @@ Node App
 Docker
 ------
 1. Dockerfile
-
-FROM node:13-alpine
-
-WORKDIR /app
-
-COPY package.json package-lock.json ./
-
-RUN npm install --production
-
-COPY . .
-
-EXPOSE 3000
-
-CMD node index.js
- 
 2.Build the image: docker build -t mmichaeli/node-hello-app .
 3.Edit index.js and replace the word Hi with Hello.
 4.Re-build the image and notice Docker re-using previous layers: docker build -t mmichaeli/node-hello-app .
